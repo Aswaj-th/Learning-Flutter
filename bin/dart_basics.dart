@@ -1,7 +1,25 @@
 // import 'package:dart_basics/dart_basics.dart' as dart_basics;
 // import 'dart:io';
 
+class Person {
+  final String _name;
+  int _age;
+
+  Person(this._name, this._age);
+  Person.ageBelow18(this._name, this._age);
+
+  int get age {
+    return _age;
+  }
+
+  set setAge(int val) {
+    _age = val;
+  }
+}
+
 void main(List<String> arguments) {
+  final person1 = Person("Nikhil", 23);
+  print(person1._name);
   // print('Hello world: ${dart_basics.calculate()}!');
   // // var a = stdin.readLineSync();
   // // print('Hello $a');
@@ -16,28 +34,28 @@ void main(List<String> arguments) {
   // Future<int> ret = sumFuture(5, 6);
   // print(ret);
 
-  sum();
-  print("After future");
+  // sum();
+  // print("After future");
 }
 
-Future<void> sum() async {
-  sumFuture(33, 44);
-  print("in sum");
-}
+// Future<void> sum() async {
+//   sumFuture(33, 44);
+//   print("in sum");
+// }
 
-Future<int> sumFuture(int a, int b) async {
-  await Future.delayed(Duration(seconds: 3));
-  print("in sum future ${a + b}");
-  return a + b;
-}
+// Future<int> sumFuture(int a, int b) async {
+//   await Future.delayed(Duration(seconds: 3));
+//   print("in sum future ${a + b}");
+//   return a + b;
+// }
 
-void sumParams(int a, int b) {
-  print(a + b);
-}
+// void sumParams(int a, int b) {
+//   print(a + b);
+// }
 
-void sumReq({required int a, required int b, int c = 0, int? d}) {
-  print(a + b + c);
-}
+// void sumReq({required int a, required int b, int c = 0, int? d}) {
+//   print(a + b + c);
+// }
 
 // Future<int> sumFuture(int a, int b) async {
 //   return a+b;
