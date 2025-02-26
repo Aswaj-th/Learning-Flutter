@@ -1,25 +1,37 @@
 // import 'package:dart_basics/dart_basics.dart' as dart_basics;
 // import 'dart:io';
+// import 'class_example.dart';
+import 'exception_handling.dart';
 
-class Person {
-  final String _name;
-  int _age;
+// class Person {
+//   final String _name;
+//   int _age;
 
-  Person(this._name, this._age);
-  Person.ageBelow18(this._name, this._age);
+//   Person(this._name, this._age);
+//   Person.ageBelow18(this._name, this._age);
 
-  int get age {
-    return _age;
-  }
+//   int get age {
+//     return _age;
+//   }
 
-  set setAge(int val) {
-    _age = val;
-  }
-}
+//   set setAge(int val) {
+//     _age = val;
+//   }
+// }
 
 void main(List<String> arguments) {
-  final person1 = Person("Nikhil", 23);
-  print(person1._name);
+  try {
+    final phoneValid = validatePhoneNumber("655");
+  } on InvalidPhoneNumberException catch (_) {
+    print("invalid phone number");
+  } catch (e) {
+    print(e);
+  }
+  // final human = Human();
+  // human.sayHello();
+  // human.sayName();
+  // final person1 = Person("Nikhil", 23);
+  // print(person1._name);
   // print('Hello world: ${dart_basics.calculate()}!');
   // // var a = stdin.readLineSync();
   // // print('Hello $a');
